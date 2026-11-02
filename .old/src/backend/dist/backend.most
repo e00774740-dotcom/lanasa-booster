@@ -1,0 +1,245 @@
+// Version: 4.0.0
+type AccessControlState__201339279 =
+  {
+    var adminAssigned : Bool;
+    userRoles : Map__230067015<Principal, UserRole__91647283>
+  };
+type AutoSettings__401448140 =
+  {
+    buttonX : Nat;
+    buttonY : Nat;
+    gestureDuration : Nat;
+    pauseBetween : Nat;
+    shotsPerBurst : Nat;
+    swipeDistance : Nat
+  };
+type AutoSettings__511902913 =
+  {
+    buttonX : Nat;
+    buttonY : Nat;
+    gestureDuration : Nat;
+    pauseBetween : Nat;
+    refreshRate : Nat;
+    shizukuActive : Bool;
+    shotsPerBurst : Nat;
+    swipeDistance : Nat
+  };
+type AutoSettings__534701755 =
+  {
+    buttonX : Nat;
+    buttonY : Nat;
+    gestureDuration : Nat;
+    pauseBetween : Nat;
+    refreshRate : Nat;
+    shotsPerBurst : Nat;
+    swipeDistance : Nat
+  };
+type AutoSettings__627280699 =
+  {
+    buttonX : Nat;
+    buttonY : Nat;
+    gestureDuration : Nat;
+    pauseBetween : Nat;
+    refreshRate : Nat;
+    shizukuActive : Bool;
+    shotsPerBurst : Nat;
+    swipeDistance : Nat
+  };
+type AutoSettings__662856458 =
+  {
+    buttonX : Nat;
+    buttonY : Nat;
+    gestureDuration : Nat;
+    pauseBetween : Nat;
+    refreshRate : Nat;
+    shizukuActive : Bool;
+    shotsPerBurst : Nat;
+    swipeDistance : Nat
+  };
+type Boost__143029869 = {id : Nat; timestamp : Int};
+type Boost__306827244 = {id : Nat; timestamp : Int};
+type Boost__516207606 = {id : Nat; timestamp : Int};
+type Boost__548867989 = {id : Nat; timestamp : Int};
+type Boost__573362160 = {id : Nat; timestamp : Timestamp__301639476};
+type Boost__823998907 = {id : Nat; timestamp : Int};
+type Data__44217153<K, V> = {var count : Nat__227979830; kvs : [var ?(K, V)]};
+type FfPerfSettings__124983275 =
+  {
+    cpuGovernor : Text;
+    ioScheduler : Text;
+    networkMode : Text;
+    targetFps : Nat;
+    thermalProfile : Text
+  };
+type FfPerfSettings__310501059 =
+  {
+    cpuGovernor : Text;
+    ioScheduler : Text;
+    networkMode : Text;
+    targetFps : Nat;
+    thermalProfile : Text
+  };
+type Internal__283199666<K, V> =
+  {children : [var ?Node__204828119<K, V>]; data : Data__44217153<K, V>};
+type Leaf__598469445<K, V> = {data : Data__44217153<K, V>};
+type List__355132335<T> =
+  {
+    var blockIndex : Nat__227979830;
+    var blocks : [var [var ?T]];
+    var elementIndex : Nat__227979830
+  };
+type List__836382695<T> = List__355132335<T>;
+type Map__230067015<K, V> = Map__405889023<K, V>;
+type Map__405889023<K, V> = Map__603270868<K, V>;
+type Map__603270868<K, V> =
+  {var root : Node__204828119<K, V>; var size : Nat__227979830};
+type Nat__227979830 = Nat__920180692;
+type Nat__920180692 = Nat;
+type NewActor__1025150112 =
+  {
+    accessControlState : AccessControlState__201339279;
+    autoSettings : Map__230067015<Principal, AutoSettings__534701755>;
+    boosts : Map__230067015<Principal, UserBoosts__695117720>
+  };
+type NewActor__250974745 =
+  {
+    accessControlState : AccessControlState__201339279;
+    autoSettings : Map__230067015<Principal, AutoSettings__662856458>;
+    boosts : Map__230067015<Principal, UserBoosts__313984023>
+  };
+type NewActor__573570302 =
+  {
+    accessControlState : AccessControlState__201339279;
+    autoSettings : Map__230067015<Principal, AutoSettings__627280699>;
+    boosts : Map__230067015<Principal, UserBoosts__504865294>;
+    ffPerfSettings : Map__230067015<Principal, FfPerfSettings__124983275>
+  };
+type NewActor__769816496 =
+  {
+    accessControlState : AccessControlState__201339279;
+    boosts : Map__230067015<Principal, UserBoosts__759902366>
+  };
+type NewActor__857607810 =
+  {
+    accessControlState : AccessControlState__201339279;
+    autoSettings : Map__230067015<Principal, AutoSettings__401448140>;
+    boosts : Map__230067015<Principal, UserBoosts__175973861>
+  };
+type Node__204828119<K, V> =
+  {#internal : Internal__283199666<K, V>; #leaf : Leaf__598469445<K, V>};
+type OldActor__418402571 =
+  {
+    accessControlState : AccessControlState__201339279;
+    autoSettings : Map__230067015<Principal, AutoSettings__627280699>;
+    boosts : Map__230067015<Principal, UserBoosts__504865294>
+  };
+type OldActor__458399350 =
+  {
+    accessControlState : AccessControlState__201339279;
+    autoSettings : Map__230067015<Principal, OldAutoSettings__1030794689>;
+    boosts : Map__230067015<Principal, UserBoosts__313984023>
+  };
+type OldActor__512397517 = {};
+type OldActor__77805270 =
+  {
+    accessControlState : AccessControlState__201339279;
+    boosts : Map__230067015<Principal, UserBoosts__175973861>
+  };
+type OldActor__802469500 =
+  {
+    accessControlState : AccessControlState__201339279;
+    autoSettings : Map__230067015<Principal, OldAutoSettings__59099990>;
+    boosts : Map__230067015<Principal, UserBoosts__695117720>
+  };
+type OldAutoSettings__1030794689 =
+  {
+    buttonX : Nat;
+    buttonY : Nat;
+    gestureDuration : Nat;
+    pauseBetween : Nat;
+    refreshRate : Nat;
+    shotsPerBurst : Nat;
+    swipeDistance : Nat
+  };
+type OldAutoSettings__59099990 =
+  {
+    buttonX : Nat;
+    buttonY : Nat;
+    gestureDuration : Nat;
+    pauseBetween : Nat;
+    shotsPerBurst : Nat;
+    swipeDistance : Nat
+  };
+type Timestamp__301639476 = Int;
+type UserBoosts__175973861 =
+  {
+    boosts : List__836382695<Boost__548867989>;
+    var nextId : Nat;
+    var powerLevel : Nat;
+    var totalBoosts : Nat
+  };
+type UserBoosts__313984023 =
+  {
+    boosts : List__836382695<Boost__516207606>;
+    var nextId : Nat;
+    var powerLevel : Nat;
+    var totalBoosts : Nat
+  };
+type UserBoosts__504865294 =
+  {
+    boosts : List__836382695<Boost__823998907>;
+    var nextId : Nat;
+    var powerLevel : Nat;
+    var totalBoosts : Nat
+  };
+type UserBoosts__695117720 =
+  {
+    boosts : List__836382695<Boost__306827244>;
+    var nextId : Nat;
+    var powerLevel : Nat;
+    var totalBoosts : Nat
+  };
+type UserBoosts__759902366 =
+  {
+    boosts : List__836382695<Boost__143029869>;
+    var nextId : Nat;
+    var powerLevel : Nat;
+    var totalBoosts : Nat
+  };
+type UserBoosts__911879386 =
+  {
+    boosts : List__836382695<Boost__573362160>;
+    var nextId : Nat;
+    var powerLevel : Nat;
+    var totalBoosts : Nat
+  };
+type UserRole__91647283 = {#admin; #guest; #user};
+{
+  "00000000_000000" : OldActor__512397517 -> NewActor__769816496;
+  "20261102_000000" : (old : OldActor__77805270) -> NewActor__857607810;
+  "20261102_120000" : (old : OldActor__802469500) -> NewActor__1025150112;
+  "20261102_130000" : (old : OldActor__458399350) -> NewActor__250974745;
+  "20261102_140000" : (old : OldActor__418402571) -> NewActor__573570302
+}
+actor  {
+  stable accessControlState :
+    {
+      var adminAssigned : Bool;
+      userRoles : Map__230067015<Principal, UserRole__91647283>
+    };
+  stable autoSettings :
+    {
+      var root : Node__204828119<Principal, AutoSettings__511902913>;
+      var size : Nat__227979830
+    };
+  stable boosts :
+    {
+      var root : Node__204828119<Principal, UserBoosts__911879386>;
+      var size : Nat__227979830
+    };
+  stable ffPerfSettings :
+    {
+      var root : Node__204828119<Principal, FfPerfSettings__310501059>;
+      var size : Nat__227979830
+    }
+};

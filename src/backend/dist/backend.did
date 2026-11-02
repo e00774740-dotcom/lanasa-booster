@@ -1,0 +1,113 @@
+type Value = 
+ variant {
+   "bool": bool;
+   float: float64;
+   "int": int;
+   "nat": nat;
+   "null";
+   "text": text;
+ };
+type UserRole = 
+ variant {
+   admin;
+   guest;
+   user;
+ };
+type Timestamp = int;
+type Result__1 = 
+ variant {
+   err: Error;
+   ok;
+ };
+type Result = 
+ record {
+   hasMore: bool;
+   rows: vec vec Cell;
+ };
+type FfPerfSettings = 
+ record {
+   cpuGovernor: text;
+   ioScheduler: text;
+   networkMode: text;
+   targetFps: nat;
+   thermalProfile: text;
+ };
+type Error = 
+ variant {
+   AmbiguousAttribute: record {
+                         field: text;
+                         sources: vec text;
+                       };
+   FrontendOriginMismatch: record {
+                             expected: vec text;
+                             got: text;
+                           };
+   FrontendOriginsNotConfigured;
+   MalformedCandid;
+   MissingField: text;
+   MixedSsoSources: record {
+                      otherKeys: vec text;
+                      ssoKeys: vec text;
+                    };
+   NoAttributes;
+   Stale: record {ageNs: nat;};
+   UnknownNonce;
+   UntrustedSsoSource: record {domain: text;};
+ };
+type Cell = 
+ record {
+   name: text;
+   value: Value;
+ };
+type BoostStats = 
+ record {
+   powerLevel: nat;
+   totalBoosts: nat;
+ };
+type Boost = 
+ record {
+   id: nat;
+   timestamp: Timestamp;
+ };
+type AutoSettings = 
+ record {
+   buttonX: nat;
+   buttonY: nat;
+   gestureDuration: nat;
+   pauseBetween: nat;
+   refreshRate: nat;
+   shizukuActive: bool;
+   shotsPerBurst: nat;
+   swipeDistance: nat;
+ };
+service : {
+  _initialize_access_control: () -> ();
+  _internet_identity_sign_in_finish: () -> (Result__1);
+  _internet_identity_sign_in_start: () -> (blob);
+  assignCallerUserRole: (user: principal, role: UserRole) -> ();
+  execute: (qJson: text) -> (Result) query;
+  getApiDoc: () -> (text) query;
+  /// Returns the caller's saved Auto settings, or the defaults when none saved.
+  getAutoSettings: () -> (AutoSettings) query;
+  /// Returns the caller's total boost count and current power level.
+  getBoostStats: () -> (BoostStats) query;
+  getCallerUserRole: () -> (UserRole) query;
+  /// Returns the caller's saved FF Performance settings, or the defaults when none saved.
+  getFfPerfSettings: () -> (FfPerfSettings) query;
+  isCallerAdmin: () -> (bool) query;
+  /// Returns the caller's boosts, newest first.
+  listBoosts: () -> (vec Boost) query;
+  /// Records one boost for the caller and returns the updated stats.
+  recordBoost: () -> (BoostStats);
+  /// Restores the caller's Auto settings to the script defaults.
+  resetAutoSettings: () -> (AutoSettings);
+  /// Resets the caller's counter and history.
+  resetBoosts: () -> (BoostStats);
+  /// Restores the caller's FF Performance settings to the module defaults.
+  resetFfPerfSettings: () -> (FfPerfSettings);
+  /// Saves the caller's Auto settings and returns the stored value.
+  saveAutoSettings: (settings: AutoSettings) -> (AutoSettings);
+  /// Saves the caller's FF Performance settings and returns the stored value.
+  saveFfPerfSettings: (settings: FfPerfSettings) -> (FfPerfSettings);
+  schema: () -> (text) query;
+}

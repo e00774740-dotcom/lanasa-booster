@@ -1,0 +1,18 @@
+{
+  "overview": "LaNasa Booster es una app de rendimiento para Android con estética espacial neón que reúne módulos de ajuste por usuario, ahora con el nuevo módulo FF Performance Core.",
+  "features": [
+    "Módulo FF Performance Core con ajustes de FPS, governor, I/O, red y thermal",
+    "Guardar y restaurar ajustes de rendimiento por usuario",
+    "Ajustes que se conservan entre sesiones",
+    "Cada usuario solo ve sus propios ajustes",
+    "Estados de carga, vacío y error visibles"
+  ],
+  "category": "productivity",
+  "tags": [
+    "android",
+    "performance",
+    "gaming",
+    "booster"
+  ],
+  "last_updated": "2026-11-02T03:39:12.068Z"
+}
